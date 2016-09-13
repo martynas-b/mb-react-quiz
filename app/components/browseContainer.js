@@ -28,7 +28,7 @@ class BrowseContainer extends React.Component {
 						})}
 					</div>
 				</div>
-				<LoadButton onLoadClick={() => this.props.fetchItemList({
+				<LoadButton onClick={() => this.props.fetchItemList({
 					start: this.props.items ? this.props.items.length : this.props.startIndex,
 					limit: this.props.limit,
 					concat: true
