@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import favStorage from './favStorage.js';
+import favStorage from './favStorage';
 
 export const REQUEST_ITEM = 'REQUEST_ITEM';
 export const RECEIVE_ITEM = 'RECEIVE_ITEM';
@@ -17,26 +17,22 @@ function receiveItem (item) {
 	}
 };
 
-const singleItemActions = {
-	fetch: function (id) {
-		return function (dispatch) {
+export const fetchItem = function (id) {
+	return (dispatch) => {
 
-		    dispatch(requestItem());
-		    
-		    fetch('/item/' + id + '/data')
-		    .then( (resp) => resp.json() )
-		    .then( (item) => {
-		    	
-		    	var favItems = favStorage.getFavItems();
-		    	var inx = favItems.findIndex(function(id) {
-		    		return id === item.id;
-		    	});
-		    	item.favorite = inx !== -1 ? true : false;
-		    	
-		    	dispatch(receiveItem(item));
-		    });
-		}
+	    dispatch(requestItem());
+	    
+	    fetch('/item/' + id + '/data')
+	    .then( (resp) => resp.json() )
+	    .then( (item) => {
+	    	
+	    	var favItems = favStorage.getFavItems();
+	    	var inx = favItems.findIndex(function(id) {
+	    		return id === item.id;
+	    	});
+	    	item.favorite = inx !== -1 ? true : false;
+	    	
+	    	dispatch(receiveItem(item));
+	    });
 	}
 };
-
-export default singleItemActions;

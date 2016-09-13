@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import ItemContainer from '../components/itemContainer.js';
+import ItemContainer from '../components/itemContainer';
 
-import actions from '../actions';
+import * as singleItemActions from '../actions/singleItem';
 
 const mapStateToProps = (state) => {
 	return {
@@ -10,17 +10,9 @@ const mapStateToProps = (state) => {
 	}
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		fetchItem: (id) => {
-			dispatch(actions.singleItem.fetch(id));
-		}
-	}
-};
-
 const ItemLoadedContainer = connect(
 	mapStateToProps,
-	mapDispatchToProps
+	singleItemActions
 )(ItemContainer);
 
 export default ItemLoadedContainer;

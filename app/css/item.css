@@ -2,7 +2,7 @@
 @value rqGolden, rqWhite, rqLightgray, rqGray from colors;
 
 .itemHeader {
-	composes: header from './common.css';
+	composes: header from './global.css';
 	position: relative;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .itemOuterContainer {
-	composes: outerContainer from './common.css';
+	composes: outerContainer from './global.css';
 }
 
 .itemContainer {
@@ -38,7 +38,7 @@
 }
 
 .itemImage {
-	composes: itemBox from './common.css';
+	composes: itemBox from './global.css';
 	width: 300px;
 	flex-grow: 1;
 	position: relative;
@@ -48,14 +48,14 @@
 }
 
 .itemData {
-	composes: itemBox from './common.css';
+	composes: itemBox from './global.css';
 	width: 600px;
 	flex-basis: auto;
 	color: rqGray;
 }
 
 .itemDescr {
-	composes: itemBox from './common.css';
+	composes: itemBox from './global.css';
 	composes: itemData;
 	text-align: justify;
 	flex-grow: 1;

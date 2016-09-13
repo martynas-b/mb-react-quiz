@@ -1,11 +1,11 @@
-import commonStyles from "../css/common.css";
+import globalStyles from "../css/global.css";
 import React from 'react';
 
 class PageCont extends React.Component {
 
 	render () {
 		return (
-			<div className={commonStyles.content}>
+			<div className={globalStyles.content}>
 				{this.props.children}
 			</div>
 		);

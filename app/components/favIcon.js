@@ -1,4 +1,4 @@
-import commonStyles from "../css/common.css";
+import globalStyles from "../css/global.css";
 import React from 'react';
 
 class FavIcon extends React.Component {
@@ -8,11 +8,11 @@ class FavIcon extends React.Component {
 		
 		return (
 			<div>
-				<img onClick={() => this.props.onFavIconClick({
+				<img onClick={() => this.props.setFavoriteItem({
 					id: this.props.item.id,
 					favorite: !this.props.item.favorite,
 					itemList: this.props.itemList
-				})} className={commonStyles.favoriteIcon} src={heartSrc} />			
+				})} className={globalStyles.favoriteIcon} src={heartSrc} />			
 			</div>
 		);
 	}

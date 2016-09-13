@@ -2,11 +2,11 @@
 @value rqGolden, rqWhite, rqLightgray from colors;
 
 .browseHeader {
-	composes: header from './common.css';
+	composes: header from './global.css';
 }
 
 .browseOuterContainer {
-	composes: outerContainer from './common.css';
+	composes: outerContainer from './global.css';
 }
 
 .browseContainer {
@@ -22,7 +22,7 @@
 }
 
 .browseItem {
-	composes: itemBox from './common.css';
+	composes: itemBox from './global.css';
 	width: 300px;
 	height: 300px;
 	margin: 8px;

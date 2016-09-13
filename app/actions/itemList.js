@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import favStorage from './favStorage.js';
+import favStorage from './favStorage';
 
 export const REQUEST_ITEMLIST = 'REQUEST_ITEMLIST';
 export const RECEIVE_ITEMLIST = 'RECEIVE_ITEMLIST';
@@ -18,31 +18,27 @@ function receiveItemList (params) {
 	}
 };
 
-const itemListActions = {
-	fetch: function (params) {
-		return function (dispatch) {
+export const fetchItemList = function (params) {
+	return (dispatch) => {
 
-		    dispatch(requestItemList());
-		    
-		    fetch('/browse/data?start=' + params.start + '&limit=' + params.limit)
-		    .then( (resp) => resp.json() )
-		    .then( (data) => {
-		    	
-		    	var favItems = favStorage.getFavItems();
-		    	data.items.forEach(function (item) {
-		    		var inx = favItems.findIndex(function(id) {
-		    			return id === item.id;
-		    		});
-		            item.favorite = inx !== -1 ? true : false;
-		        });
-		    	
-		    	dispatch(receiveItemList({
-		    		items: data.items,
-		    		concat: params.concat
-		    	}));
-		    });
-		}
+	    dispatch(requestItemList());
+	    
+	    fetch('/browse/data?start=' + params.start + '&limit=' + params.limit)
+	    .then( (resp) => resp.json() )
+	    .then( (data) => {
+	    	
+	    	var favItems = favStorage.getFavItems();
+	    	data.items.forEach(function (item) {
+	    		var inx = favItems.findIndex(function(id) {
+	    			return id === item.id;
+	    		});
+	            item.favorite = inx !== -1 ? true : false;
+	        });
+	    	
+	    	dispatch(receiveItemList({
+	    		items: data.items,
+	    		concat: params.concat
+	    	}));
+	    });
 	}
 };
-
-export default itemListActions;

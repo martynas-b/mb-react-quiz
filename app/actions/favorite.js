@@ -1,4 +1,4 @@
-import favStorage from './favStorage.js';
+import favStorage from './favStorage';
 
 export const SET_FAV_ITEMLIST = 'SET_FAV_ITEMLIST';
 export const SET_FAV_ITEM = 'SET_FAV_ITEM';
@@ -11,16 +11,11 @@ function setFavorite (params) {
 	}
 };
 
-const favoriteActions = {
-	setFavorite: function (params) {
+export const setFavoriteItem = function (params) {
+	return (dispatch) => {
 		
-		return function (dispatch) {
-			
-			favStorage.setFavItem(params);
-			
-			dispatch(setFavorite(params));
-		}
+		favStorage.setFavItem(params);
+		
+		dispatch(setFavorite(params));
 	}
 };
-
-export default favoriteActions;
