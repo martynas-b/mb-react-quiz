@@ -1,5 +1,7 @@
-import { SET_FAV_ITEMLIST, SET_FAV_ITEM } from '../constants';
 import favStorage from './favStorage.js';
+
+export const SET_FAV_ITEMLIST = 'SET_FAV_ITEMLIST';
+export const SET_FAV_ITEM = 'SET_FAV_ITEM';
 
 function setFavorite (params) {
 	return {

@@ -1,4 +1,4 @@
-import { FAV_STORAGE_NAME } from '../constants';
+const FAV_STORAGE_NAME = 'FAV_ITEMS';
 
 const favStorage = {
 

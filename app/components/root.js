@@ -9,13 +9,11 @@ class Root extends React.Component {
 	render () {
 		
 		return (
-			<div>
-				<Provider store={this.props.store}>
-					<Router history={browserHistory}>	
-						{routes()}
-					</Router>
-				</Provider>
-			</div>
+			<Provider store={this.props.store}>
+				<Router history={browserHistory}>	
+					{routes()}
+				</Router>
+			</Provider>
 		);
 	}
 }

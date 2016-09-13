@@ -1,6 +1,8 @@
 import fetch from 'isomorphic-fetch';
-import { REQUEST_ITEM, RECEIVE_ITEM } from '../constants';
 import favStorage from './favStorage.js';
+
+export const REQUEST_ITEM = 'REQUEST_ITEM';
+export const RECEIVE_ITEM = 'RECEIVE_ITEM';
 
 function requestItem () {
 	return {

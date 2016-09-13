@@ -1,4 +1,5 @@
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, SET_FAV_ITEMLIST } from '../constants';
+import { SET_FAV_ITEMLIST } from '../actions/favorite.js';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../actions/itemList.js';
 
 function cloneItems (items) {
 	return JSON.parse(JSON.stringify(items));

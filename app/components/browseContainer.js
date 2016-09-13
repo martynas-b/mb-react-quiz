@@ -4,15 +4,14 @@ import React from 'react';
 
 import BrowseItem from './browseItem.js';
 import LoadButton from './loadButton.js';
-import { START_INDEX, ADD_ITEMS } from '../constants';
 
 class BrowseContainer extends React.Component {
 	
 	componentDidMount () {
-		var limit = this.props.items ? this.props.items.length : ADD_ITEMS;
+		var limit = this.props.items ? this.props.items.length : this.props.limit;
 		
 		this.props.fetchItemList({
-			start: START_INDEX,
+			start: this.props.startIndex,
 			limit: limit,
 			concat: false
 		});
@@ -30,8 +29,8 @@ class BrowseContainer extends React.Component {
 					</div>
 				</div>
 				<LoadButton onLoadClick={() => this.props.fetchItemList({
-					start: this.props.items ? this.props.items.length : START_INDEX,
-					limit: ADD_ITEMS,
+					start: this.props.items ? this.props.items.length : this.props.startIndex,
+					limit: this.props.limit,
 					concat: true
 				})} />
 			</div>
@@ -44,5 +43,10 @@ class BrowseContainer extends React.Component {
 		);
 	}
 }
+
+BrowseContainer.defaultProps = {
+	startIndex: 0,
+	limit: 9
+};
 
 export default BrowseContainer;

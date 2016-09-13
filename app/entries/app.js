@@ -4,18 +4,14 @@ import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
-import reducer from './reducers';
-import Root from './components/root.js';
+import reducer from '../reducers';
+import Root from '../components/root.js';
 
-(function () {
-	
-	const loggerMiddleware = createLogger();
-	
-	const store = createStore(reducer, applyMiddleware( thunkMiddleware, loggerMiddleware ));
-	
-	ReactDOM.render(
-			<Root store={store} />,
-			document.getElementById('root')
-	);
+const loggerMiddleware = createLogger();
 
-})();
+const store = createStore(reducer, applyMiddleware(thunkMiddleware, loggerMiddleware));
+
+ReactDOM.render(
+		<Root store={store} />,
+		document.getElementById('root')
+);
