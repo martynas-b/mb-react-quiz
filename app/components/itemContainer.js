@@ -11,11 +11,16 @@ import FavIconContainer from '../containers/favIconContainer.js';
 class ItemContainer extends React.Component {
 	
 	componentDidMount () {
+		this.props.getFavoriteItems();
 		this.props.fetchItem(this.props.id);
 	}
 	
+	isFavorite () {
+		const { favItems, item } = this.props;
+		return favItems.hasOwnProperty(item.id) ? favItems[item.id] : false;
+	}
+	
 	render () {
-		
 		var itemCont = this.props.item ? (
 			<div>
 				<ItemHeader key={this.props.item.id + '|header'} item={this.props.item} />
@@ -24,7 +29,7 @@ class ItemContainer extends React.Component {
 						<div className={itemStyles.itemImage}>
 							<ItemImage key={this.props.item.id + '|img'} item={this.props.item} />
 							<div className={itemStyles.favIconCont}>
-								<FavIconContainer item={this.props.item} itemList={false} />
+								<FavIconContainer {...this.props} favorite={this.isFavorite()} />
 							</div>
 						</div>
 						<div className={itemStyles.itemData}>

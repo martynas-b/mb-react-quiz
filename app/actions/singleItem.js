@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-import favStorage from './favStorage';
 
 export const REQUEST_ITEM = 'REQUEST_ITEM';
 export const RECEIVE_ITEM = 'RECEIVE_ITEM';
@@ -25,13 +24,6 @@ export const fetchItem = function (id) {
 	    fetch('/item/' + id + '/data')
 	    .then( (resp) => resp.json() )
 	    .then( (item) => {
-	    	
-	    	var favItems = favStorage.getFavItems();
-	    	var inx = favItems.findIndex(function(id) {
-	    		return id === item.id;
-	    	});
-	    	item.favorite = inx !== -1 ? true : false;
-	    	
 	    	dispatch(receiveItem(item));
 	    });
 	}

@@ -6,8 +6,15 @@ import BrowseItem from './browseItem.js';
 import LoadButton from './loadButton.js';
 
 class BrowseContainer extends React.Component {
-	
+	/*
+	constructor(props) {
+		super(props);
+		this.isFavorite = this.isFavorite.bind(this);
+	}
+	*/
 	componentDidMount () {
+		this.props.getFavoriteItems();
+		
 		var limit = this.props.items ? this.props.items.length : this.props.limit;
 		
 		this.props.fetchItemList({
@@ -17,6 +24,11 @@ class BrowseContainer extends React.Component {
 		});
 	}
 	
+	isFavorite (itemId) {
+		const {favItems} = this.props;
+		return favItems.hasOwnProperty(itemId) ? favItems[itemId] : false;
+	}
+	
 	render () {
 		
 		var browseCont = this.props.items ? (
@@ -24,8 +36,9 @@ class BrowseContainer extends React.Component {
 				<div className={browseStyles.browseOuterContainer}>
 					<div className={browseStyles.browseContainer}>
 						{this.props.items.map(function(item) {
-							return <BrowseItem key={item.id + '|browseItem'} item={item} />;
-						})}
+							const favorite = this.isFavorite(item.id);
+							return <BrowseItem key={item.id + '|browseItem'} item={item} favorite={favorite} />;
+						}, this)}
 					</div>
 				</div>
 				<LoadButton onClick={() => this.props.fetchItemList({

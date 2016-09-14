@@ -1,15 +1,4 @@
-import { SET_FAV_ITEM } from '../actions/favorite.js';
 import { REQUEST_ITEM, RECEIVE_ITEM } from '../actions/singleItem.js';
-
-function setFavInNewState (state, action) {	
-	var item = JSON.parse(JSON.stringify(state.item));
-	
-	item.favorite = action.favorite;
-	
-	return Object.assign({}, state, {
-		item: item
-	});
-};
 
 export default function item (state = {
 	isFetching: false,
@@ -26,8 +15,6 @@ export default function item (state = {
 				isFetching: false,
 				item: action.item
 			})
-		case SET_FAV_ITEM:
-			return setFavInNewState(state, action)
 		default:
 			return state
 	}

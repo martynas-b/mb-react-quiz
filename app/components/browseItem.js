@@ -9,7 +9,7 @@ import FavIconContainer from '../containers/favIconContainer.js';
 class BrowseItem extends React.Component {
 	
 	shouldComponentUpdate (nextProps) {
-		return nextProps.item.favorite !== this.props.item.favorite;
+		return nextProps.favorite !== this.props.favorite;
 	}
 	
 	render () {
@@ -25,7 +25,7 @@ class BrowseItem extends React.Component {
 		 			<Price price={this.props.item.price} />
 		 		</div>
 		 		<div className={browseStyles.browseItemFav}>
-		 			<FavIconContainer item={this.props.item} itemList={true} />
+		 			<FavIconContainer {...this.props} />
 		 		</div>
 			</div>
 		);
