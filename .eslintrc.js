@@ -4,7 +4,7 @@ module.exports = {
         "es6": true
     },
     "extends":
-        "1stdibs",
+       "1stdibs", //"eslint:recommended", 
     "installedESLint": true,
     "parserOptions": {
         "ecmaFeatures": {
