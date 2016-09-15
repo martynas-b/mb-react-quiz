@@ -11,14 +11,16 @@ class ItemHeader extends React.Component {
 	
 	render () {
 		
-		var link = (
+		const {item} = this.props;
+		
+		const link = (
 			<div className={itemStyles.leftHeaderLink}>
 				<Link to="/" className={itemStyles.linkText}>{'< Home'}</Link>
 			</div>
 		)
 		
-		var logo = this.props.item ? (
-			<img src={'https://www.1stdibs.com' + this.props.item.seller.logo} />
+		const logo = item ? (
+			<img src={`https://www.1stdibs.com${item.seller.logo}`} />
 		): '';
 		
 		return (

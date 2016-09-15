@@ -1,4 +1,4 @@
-import browseStyles from "../css/browse.css";
+import browseStyles from '../css/browse.css';
 
 import React from 'react';
 import { Link } from 'react-router';
@@ -13,16 +13,18 @@ class BrowseItem extends React.Component {
 	}
 	
 	render () {
-
+		
+		const {id, image, price} = this.props.item;
+		
 		return (
 			<div className={browseStyles.browseItem}>
 				<div className={browseStyles.browseItemImage}>
-					<Link to={'/item/' + this.props.item.id}>
-			 			<img src={this.props.item.image} />
+					<Link to={`/item/${id}`}>
+			 			<img src={image} />
 			 		</Link>
 		 		</div>
 		 		<div className={browseStyles.browseItemPrice}>
-		 			<Price price={this.props.item.price} />
+		 			<Price price={price} />
 		 		</div>
 		 		<div className={browseStyles.browseItemFav}>
 		 			<FavIconContainer {...this.props} />

@@ -6,7 +6,7 @@ const FAV_STORAGE_NAME = 'V_2.0_FAV_ITEMS';
 const favStorage = {
 
 	storageAvailable: function () {
-		var available = typeof(Storage) !== 'undefined';
+		const available = typeof(Storage) !== 'undefined';
 		if (!available) {
 			console.log('Local storage is not supported!');
 		}
@@ -15,7 +15,7 @@ const favStorage = {
 	
 	setFavItem: function (params) {
 		if (this.storageAvailable()) {
-			var favItems = this.getFavItems();
+			let favItems = this.getFavItems();
 			
 			favItems[params.id] = params.favorite;
 			
@@ -24,9 +24,9 @@ const favStorage = {
 	},
 	
 	getFavItems: function () {
-		var favItems = [];
+		let favItems = [];
 		if (this.storageAvailable()) {
-			var favStorage = localStorage.getItem(FAV_STORAGE_NAME);
+			const favStorage = localStorage.getItem(FAV_STORAGE_NAME);
 			favItems = favStorage ? JSON.parse(favStorage) : {};
 		}
 		return favItems;

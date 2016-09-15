@@ -1,4 +1,4 @@
-import itemStyles from "../css/item.css";
+import itemStyles from '../css/item.css';
 
 import React from 'react';
 
@@ -21,22 +21,25 @@ class ItemContainer extends React.Component {
 	}
 	
 	render () {
-		var itemCont = this.props.item ? (
+		
+		const {item} = this.props;
+		
+		const itemCont = item ? (
 			<div>
-				<ItemHeader key={this.props.item.id + '|header'} item={this.props.item} />
+				<ItemHeader key={`${item.id}|header`} {...this.props} />
 				<div className={itemStyles.itemOuterContainer}>
 					<div className={itemStyles.itemContainer}>
 						<div className={itemStyles.itemImage}>
-							<ItemImage key={this.props.item.id + '|img'} item={this.props.item} />
+							<ItemImage key={`${item.id}|img`} {...this.props} />
 							<div className={itemStyles.favIconCont}>
 								<FavIconContainer {...this.props} favorite={this.isFavorite()} />
 							</div>
 						</div>
 						<div className={itemStyles.itemData}>
-							<ItemData key={this.props.item.id + '|data'} item={this.props.item} />
+							<ItemData key={`${item.id}|data`} {...this.props} />
 						</div>
 						<div className={itemStyles.itemDescr}>
-							<ItemDescr key={this.props.item.id + '|descr'} item={this.props.item} />
+							<ItemDescr key={`${item.id}|descr`} {...this.props} />
 						</div>
 					</div>
 				</div>

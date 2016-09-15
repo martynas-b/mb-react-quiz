@@ -21,7 +21,7 @@ export const fetchItem = function (id) {
 
 	    dispatch(requestItem());
 	    
-	    fetch('/item/' + id + '/data')
+	    fetch(`/item/${id}/data`)
 	    .then( (resp) => resp.json() )
 	    .then( (item) => {
 	    	dispatch(receiveItem(item));

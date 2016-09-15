@@ -1,4 +1,4 @@
-import browseStyles from "../css/browse.css";
+import browseStyles from '../css/browse.css';
 
 import React from 'react';
 
@@ -15,11 +15,13 @@ class BrowseContainer extends React.Component {
 	componentDidMount () {
 		this.props.getFavoriteItems();
 		
-		var limit = this.props.items ? this.props.items.length : this.props.limit;
+		const {items, startIndex, limit} = this.props;
+		
+		const currentLimit = items ? items.length : limit;
 		
 		this.props.fetchItemList({
-			start: this.props.startIndex,
-			limit: limit,
+			start: startIndex,
+			limit: currentLimit,
 			concat: false
 		});
 	}
@@ -31,19 +33,21 @@ class BrowseContainer extends React.Component {
 	
 	render () {
 		
-		var browseCont = this.props.items ? (
+		const {items, startIndex, limit} = this.props;
+		
+		const browseCont = items ? (
 			<div>
 				<div className={browseStyles.browseOuterContainer}>
 					<div className={browseStyles.browseContainer}>
-						{this.props.items.map(function(item) {
+						{items.map(function(item) {
 							const favorite = this.isFavorite(item.id);
-							return <BrowseItem key={item.id + '|browseItem'} item={item} favorite={favorite} />;
+							return <BrowseItem key={`${item.id}|browseItem`} item={item} favorite={favorite} />;
 						}, this)}
 					</div>
 				</div>
 				<LoadButton onClick={() => this.props.fetchItemList({
-					start: this.props.items ? this.props.items.length : this.props.startIndex,
-					limit: this.props.limit,
+					start: items ? items.length : startIndex,
+					limit: limit,
 					concat: true
 				})} />
 			</div>

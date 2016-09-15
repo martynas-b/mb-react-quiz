@@ -4,11 +4,13 @@ class Price extends React.Component {
 
 	render () {
 		
-		var price = this.props.price ? this.props.price.amounts.USD : 'Price Upon Request';
+		const {price} = this.props;
+		
+		const priceVal = price ? price.amounts.USD : 'Price Upon Request';
 		
 		return (
 			<div>
-				{price}
+				{priceVal}
 			</div>
 		);
 	}

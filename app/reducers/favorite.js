@@ -1,7 +1,7 @@
 import { SET_FAV_ITEM, GET_FAV_ITEMS } from '../actions/favorite';
 
 function newFavState (state, action) {
-	var items = JSON.parse(JSON.stringify(state.items));
+	let items = JSON.parse(JSON.stringify(state.items));
 	
 	items[action.id] = action.favorite;
 	

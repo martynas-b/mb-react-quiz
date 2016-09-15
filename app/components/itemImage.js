@@ -1,4 +1,4 @@
-import itemStyles from "../css/item.css";
+import itemStyles from '../css/item.css';
 
 import React from 'react';
 

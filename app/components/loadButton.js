@@ -1,6 +1,6 @@
 import React from 'react'
 
-import browseStyles from "../css/browse.css";
+import browseStyles from '../css/browse.css';
 
 class LoadButton extends React.Component {
 	
