@@ -1,26 +1,25 @@
-import itemStyles from '../css/item.css';
+import itemStyles from '../css/item';
 
-import React from 'react';
+import React, { Component } from 'react';
 
-import Price from './price.js';
+import Price from './price';
 
-class ItemData extends React.Component {
+class ItemData extends Component {
 	
 	shouldComponentUpdate () {
 		return false;
 	}
 	
 	render () {
-		
-		const {item} = this.props;
+		const {title, price, measurements} = this.props;
 		
 		return (
 			<div className={itemStyles.dataContainer}>
 				<div className={itemStyles.dataTop}>
-					<div className={itemStyles.header2}>{item.title}</div>
-					<div className={itemStyles.header2} style={{marginTop: 10, marginBottom: 10}}><Price price={item.price} /></div>
+					<div className={itemStyles.header2}>{title}</div>
+					<div className={itemStyles.header2} style={{marginTop: 10, marginBottom: 10}}><Price price={price} /></div>
 					<div className={itemStyles.header3}>Measurements:</div>
-					<div>H {item.measurements.height} Dm {item.measurements.diameter}</div>
+					<div>H {measurements.height} Dm {measurements.diameter}</div>
 				</div>
 				<div className={itemStyles.purchaseBtn}>PURCHASE</div>
 				<div className={itemStyles.offerBtn}>MAKE OFFER</div>

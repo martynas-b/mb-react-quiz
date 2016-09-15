@@ -34,7 +34,7 @@ const favStorage = {
 	
 };
 
-function setFavorite (params) {
+const setFavorite = (params) => {
 	return {
 		type: SET_FAV_ITEM,
 		id: params.id,
@@ -42,14 +42,14 @@ function setFavorite (params) {
 	}
 };
 
-function getFavorite (items) {
+const getFavorite = (items) => {
 	return {
 		type: GET_FAV_ITEMS,
 		items: items
 	}
 };
 
-export const setFavoriteItem = function (params) {
+export const setFavoriteItem = (params) => {
 	return (dispatch) => {
 		
 		favStorage.setFavItem(params);
@@ -58,7 +58,7 @@ export const setFavoriteItem = function (params) {
 	}
 };
 
-export const getFavoriteItems = function () {
+export const getFavoriteItems = () => {
 	return (dispatch) => {
 		dispatch(getFavorite(favStorage.getFavItems()));
 	}

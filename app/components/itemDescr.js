@@ -1,8 +1,8 @@
-import itemStyles from '../css/item.css';
+import itemStyles from '../css/item';
 
-import React from 'react';
+import React, { Component } from 'react';
 
-class ItemDescr extends React.Component {
+class ItemDescr extends Component {
 	
 	shouldComponentUpdate () {
 		return false;
@@ -10,12 +10,12 @@ class ItemDescr extends React.Component {
 	
 	render () {
 		
-		const {item} = this.props;
+		const {description, creators} = this.props;
 		
 		return (
 			<div className={itemStyles.textWrapper}>
-				{item.description}
-				<div style={{marginTop: 20}}><span className={itemStyles.header3}>Creator: </span>{item.creators}</div>
+				{description}
+				<div style={{marginTop: 20}}><span className={itemStyles.header3}>Creator: </span>{creators}</div>
 			</div>
 		);
 	}

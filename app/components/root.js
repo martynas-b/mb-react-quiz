@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import routes from '../routes';
 
-class Root extends React.Component {
+class Root extends Component {
 
 	render () {
 		

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import PageCont from '../components/pageCont.js';
-import BrowsePage from '../components/browsePage.js';
-import ItemPage from '../components/itemPage.js';
+import PageCont from '../components/pageCont';
+import BrowsePage from '../components/browsePage';
+import ItemPage from '../components/itemPage';
 
-export default function () {
+const routes = () => {
 	return (
 		<Route component={PageCont}>
 			<Route name="browsePage" path="/" component={BrowsePage} />
@@ -13,3 +13,5 @@ export default function () {
 		</Route>
 	);
 };
+
+export default routes;

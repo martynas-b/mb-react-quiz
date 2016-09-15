@@ -1,9 +1,9 @@
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../actions/itemList.js';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../actions/itemList';
 
-export default function itemList (state = {
+const itemList = (state = {
 	isFetching: false,
 	items: null
-}, action) {
+}, action) => {
 	switch (action.type) {
 		case REQUEST_ITEMLIST:
 			return Object.assign({}, state, {
@@ -18,3 +18,5 @@ export default function itemList (state = {
 			return state
 	}
 };
+
+export default itemList;

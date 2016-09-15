@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import BrowseHeader from './browseHeader.js';
-import BrowseLoadedContainer from '../containers/browseLoadedContainer.js';
+import BrowseHeader from './browseHeader';
+import BrowseLoadedContainer from '../containers/browseLoadedContainer';
 
-class BrowsePage extends React.Component {
+class BrowsePage extends Component {
 
 	render () {
 		return (

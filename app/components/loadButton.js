@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 
-import browseStyles from '../css/browse.css';
+import browseStyles from '../css/browse';
 
-class LoadButton extends React.Component {
+class LoadButton extends Component {
 	
 	render () {
 		return (
@@ -11,6 +11,10 @@ class LoadButton extends React.Component {
 			</div>
 		);
 	}
+}
+
+LoadButton.propTypes = {
+	onClick: PropTypes.func.isRequired
 }
 
 export default LoadButton;

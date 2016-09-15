@@ -1,8 +1,8 @@
-import itemStyles from '../css/item.css';
+import itemStyles from '../css/item';
 
-import React from 'react';
+import React, { Component } from 'react';
 
-class ItemImage extends React.Component {
+class ItemImage extends Component {
 	
 	shouldComponentUpdate () {
 		return false;
@@ -12,7 +12,7 @@ class ItemImage extends React.Component {
 		
 		return (
 			<div>
-				<img src={this.props.item.image} />
+				<img src={this.props.image} />
 			</div>
 		);
 	}

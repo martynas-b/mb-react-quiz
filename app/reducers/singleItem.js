@@ -1,9 +1,9 @@
-import { REQUEST_ITEM, RECEIVE_ITEM } from '../actions/singleItem.js';
+import { REQUEST_ITEM, RECEIVE_ITEM } from '../actions/singleItem';
 
-export default function item (state = {
+const item = (state = {
 	isFetching: false,
 	item: null
-}, action) {
+}, action) => {
 	switch (action.type) {
 		case REQUEST_ITEM:
 			return Object.assign({}, state, {
@@ -19,3 +19,5 @@ export default function item (state = {
 			return state
 	}
 };
+
+export default item;

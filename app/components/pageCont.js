@@ -1,7 +1,7 @@
-import globalStyles from '../css/global.css';
-import React from 'react';
+import globalStyles from '../css/global';
+import React, { Component } from 'react';
 
-class PageCont extends React.Component {
+class PageCont extends Component {
 
 	render () {
 		return (

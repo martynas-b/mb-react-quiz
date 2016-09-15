@@ -1,14 +1,14 @@
-import itemStyles from '../css/item.css';
+import itemStyles from '../css/item';
 
-import React from 'react';
+import React, { Component } from 'react';
 
-import ItemHeader from './itemHeader.js';
-import ItemImage from './itemImage.js';
-import ItemData from './itemData.js';
-import ItemDescr from './itemDescr.js';
-import FavIconContainer from '../containers/favIconContainer.js';
+import ItemHeader from './itemHeader';
+import ItemImage from './itemImage';
+import ItemData from './itemData';
+import ItemDescr from './itemDescr';
+import FavIconContainer from '../containers/favIconContainer';
 
-class ItemContainer extends React.Component {
+class ItemContainer extends Component {
 	
 	componentDidMount () {
 		this.props.getFavoriteItems();
@@ -26,20 +26,20 @@ class ItemContainer extends React.Component {
 		
 		const itemCont = item ? (
 			<div>
-				<ItemHeader key={`${item.id}|header`} {...this.props} />
+				<ItemHeader key={`${item.id}|header`} {...item} />
 				<div className={itemStyles.itemOuterContainer}>
 					<div className={itemStyles.itemContainer}>
 						<div className={itemStyles.itemImage}>
-							<ItemImage key={`${item.id}|img`} {...this.props} />
+							<ItemImage key={`${item.id}|img`} {...item} />
 							<div className={itemStyles.favIconCont}>
-								<FavIconContainer {...this.props} favorite={this.isFavorite()} />
+								<FavIconContainer {...item} favorite={this.isFavorite()} />
 							</div>
 						</div>
 						<div className={itemStyles.itemData}>
-							<ItemData key={`${item.id}|data`} {...this.props} />
+							<ItemData key={`${item.id}|data`} {...item} />
 						</div>
 						<div className={itemStyles.itemDescr}>
-							<ItemDescr key={`${item.id}|descr`} {...this.props} />
+							<ItemDescr key={`${item.id}|descr`} {...item} />
 						</div>
 					</div>
 				</div>

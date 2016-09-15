@@ -1,12 +1,12 @@
-import browseStyles from '../css/browse.css';
+import browseStyles from '../css/browse';
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import Price from './price.js';
-import FavIconContainer from '../containers/favIconContainer.js';
+import Price from './price';
+import FavIconContainer from '../containers/favIconContainer';
 
-class BrowseItem extends React.Component {
+class BrowseItem extends Component {
 	
 	shouldComponentUpdate (nextProps) {
 		return nextProps.favorite !== this.props.favorite;
@@ -14,7 +14,7 @@ class BrowseItem extends React.Component {
 	
 	render () {
 		
-		const {id, image, price} = this.props.item;
+		const {id, image, price} = this.props;
 		
 		return (
 			<div className={browseStyles.browseItem}>
@@ -32,6 +32,13 @@ class BrowseItem extends React.Component {
 			</div>
 		);
 	}
+}
+
+BrowseItem.propTypes = {
+	id: PropTypes.string.isRequired,
+	image: PropTypes.string,
+	price: PropTypes.object,
+	favorite: PropTypes.bool.isRequired
 }
 
 export default BrowseItem;

@@ -1,6 +1,6 @@
 import { SET_FAV_ITEM, GET_FAV_ITEMS } from '../actions/favorite';
 
-function newFavState (state, action) {
+const newFavState = (state, action) => {
 	let items = JSON.parse(JSON.stringify(state.items));
 	
 	items[action.id] = action.favorite;
@@ -10,9 +10,9 @@ function newFavState (state, action) {
 	});
 };
 
-export default function favorite (state = {
+const favorite = (state = {
 	items: null
-}, action) {
+}, action) => {
 	switch (action.type) {
 		case SET_FAV_ITEM:
 			return newFavState(state, action)
@@ -24,3 +24,5 @@ export default function favorite (state = {
 			return state
 	}
 };
+
+export default favorite;

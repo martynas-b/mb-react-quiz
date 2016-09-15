@@ -1,17 +1,17 @@
-import browseStyles from '../css/browse.css';
+import browseStyles from '../css/browse';
 
-import React from 'react';
+import React, { Component } from 'react';
 
-import BrowseItem from './browseItem.js';
-import LoadButton from './loadButton.js';
+import BrowseItem from './browseItem';
+import LoadButton from './loadButton';
 
-class BrowseContainer extends React.Component {
-	/*
+class BrowseContainer extends Component {
+	
 	constructor(props) {
 		super(props);
-		this.isFavorite = this.isFavorite.bind(this);
+		this.onLoadMoreClick = this.onLoadMoreClick.bind(this);
 	}
-	*/
+	
 	componentDidMount () {
 		this.props.getFavoriteItems();
 		
@@ -31,25 +31,30 @@ class BrowseContainer extends React.Component {
 		return favItems.hasOwnProperty(itemId) ? favItems[itemId] : false;
 	}
 	
-	render () {
-		
+	onLoadMoreClick () {
 		const {items, startIndex, limit} = this.props;
+		
+		this.props.fetchItemList({
+			start: items ? items.length : startIndex,
+			limit: limit,
+			concat: true
+		});
+	}
+	
+	render () {
+		const {items} = this.props;
 		
 		const browseCont = items ? (
 			<div>
 				<div className={browseStyles.browseOuterContainer}>
 					<div className={browseStyles.browseContainer}>
-						{items.map(function(item) {
+						{items.map((item) => {
 							const favorite = this.isFavorite(item.id);
-							return <BrowseItem key={`${item.id}|browseItem`} item={item} favorite={favorite} />;
-						}, this)}
+							return <BrowseItem key={`${item.id}|browseItem`} {...item} favorite={favorite} />;
+						})}
 					</div>
 				</div>
-				<LoadButton onClick={() => this.props.fetchItemList({
-					start: items ? items.length : startIndex,
-					limit: limit,
-					concat: true
-				})} />
+				<LoadButton onClick={this.onLoadMoreClick} />
 			</div>
 		) : '';
 		
@@ -64,6 +69,6 @@ class BrowseContainer extends React.Component {
 BrowseContainer.defaultProps = {
 	startIndex: 0,
 	limit: 9
-};
+}
 
 export default BrowseContainer;

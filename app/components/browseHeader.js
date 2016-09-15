@@ -1,8 +1,8 @@
-import browseStyles from '../css/browse.css';
+import browseStyles from '../css/browse';
 
-import React from 'react';
+import React, { Component } from 'react';
 
-class BrowseHeader extends React.Component {
+class BrowseHeader extends Component {
 	
 	render () {
 		

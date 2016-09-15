@@ -3,13 +3,13 @@ import fetch from 'isomorphic-fetch';
 export const REQUEST_ITEMLIST = 'REQUEST_ITEMLIST';
 export const RECEIVE_ITEMLIST = 'RECEIVE_ITEMLIST';
 
-function requestItemList () {
+const requestItemList = () => {
 	return {
 		type: REQUEST_ITEMLIST
 	}
 };
 
-function receiveItemList (params) {
+const receiveItemList = (params) => {
 	return {
 		type: RECEIVE_ITEMLIST,
 		items: params.items,
@@ -17,7 +17,7 @@ function receiveItemList (params) {
 	}
 };
 
-export const fetchItemList = function (params) {
+export const fetchItemList = (params) => {
 	return (dispatch) => {
 
 	    dispatch(requestItemList());

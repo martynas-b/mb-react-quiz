@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import ItemLoadedContainer from '../containers/itemLoadedContainer.js';
+import ItemLoadedContainer from '../containers/itemLoadedContainer';
 
-class ItemPage extends React.Component {
+class ItemPage extends Component {
 	
 	render () {
 	

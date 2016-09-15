@@ -3,20 +3,20 @@ import fetch from 'isomorphic-fetch';
 export const REQUEST_ITEM = 'REQUEST_ITEM';
 export const RECEIVE_ITEM = 'RECEIVE_ITEM';
 
-function requestItem () {
+const requestItem = () => {
 	return {
 		type: REQUEST_ITEM
 	}
 };
 
-function receiveItem (item) {
+const receiveItem = (item) => {
 	return {
 		type: RECEIVE_ITEM,
 		item: item
 	}
 };
 
-export const fetchItem = function (id) {
+export const fetchItem = (id) => {
 	return (dispatch) => {
 
 	    dispatch(requestItem());
