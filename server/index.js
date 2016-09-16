@@ -11,11 +11,9 @@ app.use(webpackDevMiddleware(compiler, { publicPath: config.output.publicPath })
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.use('/', require('./routes/appRouter'));
-app.use('/browse', require('./routes/browseRouter'));
-app.use('/item', require('./routes/itemRouter'));
-
 app.use(express.static(__dirname + '/public'));
+
+app.use('/', require('./routes/appRouter'));
 
 const server = app.listen(port, function () {
     console.log('Example app listening at localhost:%s', port);
