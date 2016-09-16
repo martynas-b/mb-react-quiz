@@ -6,17 +6,17 @@ import routes from './routes';
 
 class Root extends Component {
 
-	render () {
-		return (
-			<Provider store={this.props.store}>
-				<Router history={browserHistory} routes={routes} />
-			</Provider>
-		);
-	}
+    render() {
+        return (
+            <Provider store={this.props.store}>
+                <Router history={browserHistory} routes={routes} />
+            </Provider>
+        );
+    }
 }
 
 Root.propTypes = {
-	store: React.PropTypes.object.isRequired
-}
+    store: PropTypes.object.isRequired
+};
 
 export default Root;

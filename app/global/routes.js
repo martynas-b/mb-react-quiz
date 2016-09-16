@@ -3,11 +3,11 @@ import itemRoutes from '../item/itemRoutes';
 import PageCont from './pageCont';
 
 const routes = {
-	component: PageCont,
-	childRoutes: [
+    component: PageCont,
+    childRoutes: [
         browseRoutes,
         itemRoutes
-	]
-}
+    ]
+};
 
 export default routes;

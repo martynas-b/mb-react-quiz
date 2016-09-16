@@ -12,6 +12,6 @@ const loggerMiddleware = createLogger();
 const store = createStore(reducer, applyMiddleware(thunkMiddleware, loggerMiddleware));
 
 ReactDOM.render(
-		<Root store={store} />,
-		document.getElementById('root')
+    <Root store={store} />,
+    document.getElementById('root')
 );

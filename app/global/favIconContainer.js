@@ -5,8 +5,8 @@ import FavIcon from './favIcon';
 import * as favoriteActions from './favoriteActions';
 
 const FavIconContainer = connect(
-	null,
-	favoriteActions
+    null,
+    favoriteActions
 )(FavIcon);
 
 export default FavIconContainer;

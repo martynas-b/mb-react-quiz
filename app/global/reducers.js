@@ -4,9 +4,9 @@ import item from '../item/itemReducer';
 import favorite from './favoriteReducer';
 
 const reducer = combineReducers({
-	browse,
-	item,
-	favorite
+    browse,
+    item,
+    favorite
 });
 
 export default reducer;
