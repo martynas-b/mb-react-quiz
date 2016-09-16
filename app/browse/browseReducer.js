@@ -1,4 +1,4 @@
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../browse/browseActions';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from './browseActions';
 
 const browse = (state = {
 	isFetching: false,

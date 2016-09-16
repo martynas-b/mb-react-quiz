@@ -1,4 +1,4 @@
-import { REQUEST_ITEM, RECEIVE_ITEM } from '../item/itemActions';
+import { REQUEST_ITEM, RECEIVE_ITEM } from './itemActions';
 
 const item = (state = {
 	isFetching: false,
