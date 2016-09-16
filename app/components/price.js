@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class Price extends Component {
 
@@ -14,6 +14,10 @@ class Price extends Component {
 			</div>
 		);
 	}
+}
+
+Price.propTypes = {
+	price: PropTypes.object
 }
 
 export default Price;

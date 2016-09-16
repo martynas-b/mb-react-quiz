@@ -1,5 +1,5 @@
 import globalStyles from '../css/global';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class PageCont extends Component {
 
@@ -10,6 +10,10 @@ class PageCont extends Component {
 			</div>
 		);
 	}
+}
+
+PageCont.propTypes = {
+    children: PropTypes.node
 }
 
 export default PageCont;

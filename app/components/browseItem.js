@@ -36,7 +36,7 @@ class BrowseItem extends Component {
 
 BrowseItem.propTypes = {
 	id: PropTypes.string.isRequired,
-	image: PropTypes.string,
+	image: PropTypes.string.isRequired,
 	price: PropTypes.object,
 	favorite: PropTypes.bool.isRequired
 }

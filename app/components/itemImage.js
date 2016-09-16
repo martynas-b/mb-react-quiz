@@ -1,6 +1,6 @@
 import itemStyles from '../css/item';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class ItemImage extends Component {
 	
@@ -16,6 +16,10 @@ class ItemImage extends Component {
 			</div>
 		);
 	}
+}
+
+ItemImage.propTypes = {
+	image: PropTypes.string.isRequired
 }
 
 export default ItemImage;

@@ -1,6 +1,6 @@
 import itemStyles from '../css/item';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class ItemDescr extends Component {
 	
@@ -19,6 +19,11 @@ class ItemDescr extends Component {
 			</div>
 		);
 	}
+}
+
+ItemDescr.propTypes = {
+	description: PropTypes.string,
+	creators: PropTypes.string
 }
 
 export default ItemDescr;

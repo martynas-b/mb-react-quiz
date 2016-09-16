@@ -1,6 +1,6 @@
 import itemStyles from '../css/item';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 class ItemHeader extends Component {
@@ -20,6 +20,10 @@ class ItemHeader extends Component {
 			</div>
 		);
 	}
+}
+	
+ItemHeader.propTypes = {
+	seller: PropTypes.object
 }
 
 export default ItemHeader;

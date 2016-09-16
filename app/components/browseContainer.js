@@ -1,6 +1,6 @@
 import browseStyles from '../css/browse';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import BrowseItem from './browseItem';
 import LoadButton from './loadButton';
@@ -69,6 +69,14 @@ class BrowseContainer extends Component {
 BrowseContainer.defaultProps = {
 	startIndex: 0,
 	limit: 9
+}
+
+BrowseContainer.propTypes = {
+	items: PropTypes.array,
+	favItems: PropTypes.object,
+	fetchItemList: PropTypes.func.isRequired,
+	startIndex: PropTypes.number,
+	limit: PropTypes.number
 }
 
 export default BrowseContainer;

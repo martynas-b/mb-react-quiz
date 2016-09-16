@@ -1,6 +1,6 @@
 import itemStyles from '../css/item';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import ItemHeader from './itemHeader';
 import ItemImage from './itemImage';
@@ -52,6 +52,12 @@ class ItemContainer extends Component {
 			</div>
 		);
 	}
+}
+
+ItemContainer.propTypes = {
+	id: PropTypes.string.isRequired,
+	item: PropTypes.object,
+	favItems: PropTypes.object
 }
 
 export default ItemContainer;
