@@ -1,20 +1,20 @@
-import React, { Component, PropTypes } from 'react'
+import browseStyles from './browse.css';
 
-import browseStyles from './browse';
+import React, { Component, PropTypes } from 'react';
 
 class LoadButton extends Component {
-	
-	render () {
-		return (
-			<div className={browseStyles.footer}>
-				<input type="button" className={browseStyles.loadButton} value="LOAD MORE" onClick={this.props.onClick} />
-			</div>
-		);
-	}
+
+    render() {
+        return (
+            <div className={browseStyles.footer}>
+                <input type="button" className={browseStyles.loadButton} value="LOAD MORE" onClick={this.props.onClick} />
+            </div>
+        );
+    }
 }
 
 LoadButton.propTypes = {
-	onClick: PropTypes.func.isRequired
-}
+    onClick: PropTypes.func.isRequired
+};
 
 export default LoadButton;

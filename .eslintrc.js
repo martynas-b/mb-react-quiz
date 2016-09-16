@@ -1,10 +1,11 @@
 module.exports = {
+    /*
     "env": {
         "browser": true,
         "es6": true
     },
     "extends":
-       "1stdibs", //"eslint:recommended", 
+       "eslint:recommended", 
     "installedESLint": true,
     "parserOptions": {
         "ecmaFeatures": {
@@ -34,4 +35,12 @@ module.exports = {
             "never"
         ]
     }
+    */
+    "extends": [
+        "1stdibs",
+        "1stdibs/jasmine",
+        "1stdibs/node",
+        "1stdibs/es6",
+        "1stdibs/react"
+    ]
 };
