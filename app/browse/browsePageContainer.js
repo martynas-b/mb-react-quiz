@@ -3,20 +3,20 @@ import { bindActionCreators } from 'redux';
 
 import BrowsePage from './browsePage';
 
-import * as itemListActions from '../actions/itemList';
-import * as favoriteActions from '../actions/favorite';
+import * as browseActions from './browseActions';
+import * as favoriteActions from '../global/favoriteActions';
 
 const mapStateToProps = (state) => {
-	const { itemList, favorite } = state;
+	const { browse, favorite } = state;
 	
 	return {
-		items: itemList.items,
+		items: browse.items,
 		favItems: favorite.items
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators(Object.assign({}, itemListActions, favoriteActions), dispatch)
+	return bindActionCreators(Object.assign({}, browseActions, favoriteActions), dispatch)
 }
 
 const BrowsePageContainer = connect(

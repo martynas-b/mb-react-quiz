@@ -3,20 +3,20 @@ import { bindActionCreators } from 'redux';
 
 import ItemPage from './itemPage';
 
-import * as singleItemActions from '../actions/singleItem';
-import * as favoriteActions from '../actions/favorite';
+import * as itemActions from './itemActions';
+import * as favoriteActions from '../global/favoriteActions';
 
 const mapStateToProps = (state) => {
-	const { singleItem, favorite } = state;
+	const { item, favorite } = state;
 	
 	return {
-		item: singleItem.item,
+		item: item.item,
 		favItems: favorite.items
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators(Object.assign({}, singleItemActions, favoriteActions), dispatch)
+	return bindActionCreators(Object.assign({}, itemActions, favoriteActions), dispatch)
 }
 
 const ItemPageContainer = connect(

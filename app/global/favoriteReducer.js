@@ -1,4 +1,4 @@
-import { SET_FAV_ITEM, GET_FAV_ITEMS } from '../actions/favorite';
+import { SET_FAV_ITEM, GET_FAV_ITEMS } from '../global/favoriteActions';
 
 const newFavState = (state, action) => {
 	let items = JSON.parse(JSON.stringify(state.items));

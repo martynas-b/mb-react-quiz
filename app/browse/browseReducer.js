@@ -1,6 +1,6 @@
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../actions/itemList';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../browse/browseActions';
 
-const itemList = (state = {
+const browse = (state = {
 	isFetching: false,
 	items: null
 }, action) => {
@@ -19,4 +19,4 @@ const itemList = (state = {
 	}
 };
 
-export default itemList;
+export default browse;
