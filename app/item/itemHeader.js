@@ -1,4 +1,4 @@
-import itemStyles from '../css/item';
+import itemStyles from './item';
 
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';

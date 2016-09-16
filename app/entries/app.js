@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
 import reducer from '../reducers';
-import Root from '../components/root';
+import Root from '../global/root';
 
 const loggerMiddleware = createLogger();
 

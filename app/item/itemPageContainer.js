@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import ItemContainer from '../components/itemContainer';
+import ItemPage from './itemPage';
 
 import * as singleItemActions from '../actions/singleItem';
 import * as favoriteActions from '../actions/favorite';
@@ -19,9 +19,9 @@ const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators(Object.assign({}, singleItemActions, favoriteActions), dispatch)
 }
 
-const ItemLoadedContainer = connect(
+const ItemPageContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ItemContainer);
+)(ItemPage);
 
-export default ItemLoadedContainer;
+export default ItemPageContainer;

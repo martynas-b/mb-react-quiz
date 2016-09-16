@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import BrowseContainer from '../components/browseContainer';
+import BrowsePage from './browsePage';
 
 import * as itemListActions from '../actions/itemList';
 import * as favoriteActions from '../actions/favorite';
@@ -19,9 +19,9 @@ const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators(Object.assign({}, itemListActions, favoriteActions), dispatch)
 }
 
-const BrowseLoadedContainer = connect(
+const BrowsePageContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(BrowseContainer);
+)(BrowsePage);
 
-export default BrowseLoadedContainer;
+export default BrowsePageContainer;

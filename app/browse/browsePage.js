@@ -1,11 +1,12 @@
-import browseStyles from '../css/browse';
+import browseStyles from './browse';
 
 import React, { Component, PropTypes } from 'react';
 
+import BrowseHeader from './browseHeader';
 import BrowseItem from './browseItem';
 import LoadButton from './loadButton';
 
-class BrowseContainer extends Component {
+class BrowsePage extends Component {
 	
 	constructor(props) {
 		super(props);
@@ -46,6 +47,7 @@ class BrowseContainer extends Component {
 		
 		const browseCont = items ? (
 			<div>
+				<BrowseHeader />
 				<div className={browseStyles.browseOuterContainer}>
 					<div className={browseStyles.browseContainer}>
 						{items.map((item) => {
@@ -66,12 +68,12 @@ class BrowseContainer extends Component {
 	}
 }
 
-BrowseContainer.defaultProps = {
+BrowsePage.defaultProps = {
 	startIndex: 0,
 	limit: 9
 }
 
-BrowseContainer.propTypes = {
+BrowsePage.propTypes = {
 	items: PropTypes.array,
 	favItems: PropTypes.object,
 	fetchItemList: PropTypes.func.isRequired,
@@ -79,4 +81,4 @@ BrowseContainer.propTypes = {
 	limit: PropTypes.number
 }
 
-export default BrowseContainer;
+export default BrowsePage;

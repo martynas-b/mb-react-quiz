@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import PageCont from '../components/pageCont';
-import BrowsePage from '../components/browsePage';
-import ItemPage from '../components/itemPage';
+import PageCont from '../global/pageCont';
+import BrowsePageContainer from '../browse/browsePageContainer';
+import ItemPageContainer from '../item/itemPageContainer';
 
 const routes = () => {
 	return (
 		<Route component={PageCont}>
-			<Route name="browsePage" path="/" component={BrowsePage} />
-			<Route name="itemPage" path="item/:id" component={ItemPage} />
+			<Route name="browsePage" path="/" component={BrowsePageContainer} />
+			<Route name="itemPage" path="item/:id" component={ItemPageContainer} />
 		</Route>
 	);
 };

@@ -1,4 +1,4 @@
-import globalStyles from '../css/global';
+import globalStyles from './global';
 import React, { Component, PropTypes } from 'react';
 
 class FavIcon extends Component {

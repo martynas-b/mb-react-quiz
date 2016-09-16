@@ -1,4 +1,4 @@
-import browseStyles from '../css/browse';
+import browseStyles from './browse';
 
 import React, { Component } from 'react';
 

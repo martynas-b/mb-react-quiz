@@ -1,4 +1,4 @@
-import itemStyles from '../css/item';
+import itemStyles from './item';
 
 import React, { Component, PropTypes } from 'react';
 
@@ -6,13 +6,13 @@ import ItemHeader from './itemHeader';
 import ItemImage from './itemImage';
 import ItemData from './itemData';
 import ItemDescr from './itemDescr';
-import FavIconContainer from '../containers/favIconContainer';
+import FavIconContainer from '../global/favIconContainer';
 
-class ItemContainer extends Component {
+class ItemPage extends Component {
 	
 	componentDidMount () {
 		this.props.getFavoriteItems();
-		this.props.fetchItem(this.props.id);
+		this.props.fetchItem(this.props.params.id);
 	}
 	
 	isFavorite () {
@@ -54,10 +54,12 @@ class ItemContainer extends Component {
 	}
 }
 
-ItemContainer.propTypes = {
-	id: PropTypes.string.isRequired,
+ItemPage.propTypes = {
+	params: React.PropTypes.shape({
+		id: React.PropTypes.string.isRequired
+	}),
 	item: PropTypes.object,
 	favItems: PropTypes.object
 }
 
-export default ItemContainer;
+export default ItemPage;

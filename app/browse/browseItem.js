@@ -1,10 +1,10 @@
-import browseStyles from '../css/browse';
+import browseStyles from './browse';
 
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import Price from './price';
-import FavIconContainer from '../containers/favIconContainer';
+import Price from '../global/price';
+import FavIconContainer from '../global/favIconContainer';
 
 class BrowseItem extends Component {
 	

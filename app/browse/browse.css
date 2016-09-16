@@ -1,12 +1,12 @@
-@value colors: './colors.css';
+@value colors: '../global/colors.css';
 @value rqGolden, rqWhite, rqLightgray from colors;
 
 .browseHeader {
-	composes: header from './global.css';
+	composes: header from '../global/global.css';
 }
 
 .browseOuterContainer {
-	composes: outerContainer from './global.css';
+	composes: outerContainer from '../global/global.css';
 }
 
 .browseContainer {
@@ -22,7 +22,7 @@
 }
 
 .browseItem {
-	composes: itemBox from './global.css';
+	composes: itemBox from '../global/global.css';
 	width: 300px;
 	height: 300px;
 	margin: 8px;

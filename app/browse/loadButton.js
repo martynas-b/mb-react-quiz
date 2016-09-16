@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-import browseStyles from '../css/browse';
+import browseStyles from './browse';
 
 class LoadButton extends Component {
 	

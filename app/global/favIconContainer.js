@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import FavIcon from '../components/favIcon';
+import FavIcon from './favIcon';
 
 import * as favoriteActions from '../actions/favorite';
 
